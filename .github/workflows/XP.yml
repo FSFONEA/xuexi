@@ -25,7 +25,7 @@ jobs:
       - name: '运行 【笑谱】'
         if: env.REFRESHTOKEN
         run: |
-          node https://github.com/FSFONE/xuexi/blob/ZIYE/Task/iboxpay.js
+          node Task/iboxpay.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
