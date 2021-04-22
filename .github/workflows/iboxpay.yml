@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: 12.x
       - name: '运行 【笑谱】'
-        if: env.refreshTOKEN
+        if: env.REFRESHTOKEN
         run: |
           cd ~/xuexi
           node main/iboxpay.js
