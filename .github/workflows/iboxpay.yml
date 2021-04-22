@@ -14,27 +14,19 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        XP_iboxpayHEADER: ${{ secrets.XP_iboxpayHEADER }}
-        XP_refreshTOKEN: ${{ secrets.XP_refreshTOKEN }}
-        XP_CASH: ${{ secrets.XP_CASH }}
-        XP_live: ${{ secrets.XP_live }}
+        refreshTOKEN: ${{ secrets.refreshTOKEN }}
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/ziye12/JavaScript.git ~/JavaScript
+          git clone https://github.com/FSFONE/xuexi/tree/ZIYE.git ~/JavaScript
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - name: npm install
-        if: env.XP_iboxpayHEADER
-        run: |
-          cd ~/JavaScript
-          npm install
       - name: '运行 【笑谱】'
-        if: env.XP_iboxpayHEADER
+        if: env.refreshTOKEN
         run: |
-          cd ~/JavaScript
+          cd ~/xuexi/blob/ZIYE
           node Task/iboxpay.js
         env:
           
