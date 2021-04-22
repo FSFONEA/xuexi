@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/FSFONE/xuexi/tree/ZIYE.git ~/JavaScript
+          git clone https://github.com/FSFONE/xuexi.git ~/xuexi
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -26,8 +26,8 @@ jobs:
       - name: '运行 【笑谱】'
         if: env.refreshTOKEN
         run: |
-          cd ~/xuexi/blob/ZIYE
-          node Task/iboxpay.js
+          cd ~/xuexi
+          node main/iboxpay.js
         env:
           
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
