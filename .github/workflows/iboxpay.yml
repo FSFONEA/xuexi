@@ -27,7 +27,7 @@ jobs:
         if: env.REFRESHTOKEN
         run: |
           cd ~/xuexi
-          node main/iboxpay.js
+          node iboxpay.js
         env:
           
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
